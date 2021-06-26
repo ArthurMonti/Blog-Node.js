@@ -12,6 +12,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+
 connection
         .authenticate()
         .then(() =>{
@@ -20,7 +21,7 @@ connection
             console.log(error);
         });
 
-        
+
 app.use("/",articlesController);
 app.use("/",categoriesController);
 

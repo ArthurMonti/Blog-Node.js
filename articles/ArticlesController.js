@@ -1,9 +1,16 @@
 const express = require("express");
 const router = express.Router();
+const Article = require("./Article");
+
 
 router.get("/articles",(req,res)=>{
-    res.send("Testando articles");
+    res.send("Rota de articles");
 });
+
+router.get("/admin/articles/new",(req,res) =>{
+    res.render("admin/articles/new");
+});
+
 
 
 module.exports = router;

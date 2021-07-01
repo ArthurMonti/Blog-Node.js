@@ -1,8 +1,45 @@
 <%- include ('partials/header.ejs') %>
 
 <body>
-    <%- include ('partials/navbar.ejs')%>
-    <h1>Olá Mundo</h1>
+    <%- include ('partials/homenavbar.ejs')%>
+    
+    <div class ="container">
+        <br>
+        <div class="card-header">
+            <div class="jumbotron">
+                <h1 class="display-4">Blog</h1>
+                <p class="lead">Este é um simples blog do curso de Formação Node.js.</p>
+                <hr class="my-4">
+                <p>Faz utilização recursos que estão citados na pagina do github</p>
+                <a class="btn btn-primary btn-lg" href="https://github.com/ArthurMonti/Blog-Node.js" role="button">Pagina do GitHub</a>
+            </div>  
+        </div>
+        <br>
+        <% articles.forEach(article => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        <%= article.title %>
+                    </h2>
+                    
+                </div>
+                <div class="card-body">
+                    <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+                </div>
+             </div>
+                
+            
+        <% }); %>
+        <br>
+        <div class="row"> 
+            <div class="col col-12">
+                
+                <a style="float:right" href="/articles/page/2">Próxima página</a>         
+            </div>
+
+        </div>
+        <hr>
+    </div>
 
 </body>
 
